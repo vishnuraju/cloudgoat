@@ -83,10 +83,11 @@ resource "aws_iam_policy" "cg-shepard-policy" {
             "Sid": "shepard",
             "Effect": "Allow",
             "Action": [
-                "lambda:Get*",
-                "lambda:Invoke*",
-                "lambda:List*"
-            ],
+                "kms:Encrypt",
+                "kms:Decrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*"
+  ],
             "Resource": "*"
         }
     ]
